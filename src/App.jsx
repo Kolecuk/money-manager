@@ -8,3 +8,5 @@ export function App() {
     <RouterProvider router={router} />
   )
 }
+
+// TODO: add store
