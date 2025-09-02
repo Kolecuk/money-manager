@@ -6,6 +6,8 @@ export const forgotPasswordEndpoint = '/auth/forgot-password'
 export const resetPasswordEndpoint = '/auth/reset-password'
 export const testEmailEndpoint = '/auth/test-email'
 export const profileEndpoint = '/profile'
+export const limitsEndpoint = '/limits'
+export const checkLimitsEndpoint = '/limits/check'
 export const categoriesEndpoint = '/categories'
 export const categoryEndpoint = (categoryId) => `/categories/${categoryId}`
 export const subcategoriesEndpoint = '/subcategories'
