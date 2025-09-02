@@ -161,6 +161,7 @@ export const { signOut } = authSlice.actions
 
 export const authReducer = authSlice.reducer
 
+//TODO: userId is it necessary ?
 //TODO: add skeleton
 
 // username: user888;
