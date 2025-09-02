@@ -6,7 +6,7 @@ const client = axios.create({
   baseURL,
   timeout: 2000,
   headers: {
-    'X-API-KEY': 'app5_68a192ffe0020',
+    'X-App-Key': 'app5_68a192ffe0020',
     'Content-Type': 'application/json',
   }
 })

@@ -1,31 +1,32 @@
 import { useState, useEffect, useRef } from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { fetchSignIn } from '../redux/auth-slice'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchSignIn } from '../redux/auth-slice'
 import { FormField } from './FormField'
 // import { FormFieldPassword } from './FormFieldPassword'
 import { Button } from './Button'
 // import { texts } from '../config/texts'
 
 export function FormSignIn() {
-  // const dispatch = useDispatch()
-  const [userEmail, setUserEmail] = useState('')
+  const dispatch = useDispatch()
+  const [userName, setUserName] = useState('')
   const [userPassword, setUserPassword] = useState('')
-  const userEmailInputRef = useRef(null)
+  const userNameInputRef = useRef(null)
   // const { lang } = useSelector(state => state.language)
+  const { userId } = useSelector(state => state.auth)
 
   useEffect(() => {
     setTimeout(() => {
-      userEmailInputRef.current.focus()
+      userNameInputRef.current.focus()
     }, 50)
-  }, [userEmailInputRef])
+  }, [userNameInputRef])
 
-  const handleChangeUserEmail = ({ target }) => setUserEmail(target.value)
+  const handleChangeUserName = ({ target }) => setUserName(target.value)
   const handleChangeUserPassword = ({ target }) => setUserPassword(target.value)
   const handleSubmit = (event) => {
     event.preventDefault()
 
     const body = {
-      email: userEmail,
+      username: userName,
       password: userPassword
     }
 
@@ -36,16 +37,16 @@ export function FormSignIn() {
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <FormField
-          ref={userEmailInputRef}
-          label="Email"
+          ref={userNameInputRef}
+          label="User name"
           // label={texts[lang].formSignIn.userEmail.label}
-          name="userEmail"
-          type="email"
-          placeholder="Email"
+          name="userName"
+          type="text"
+          placeholder="User name"
           // placeholder={texts[lang].formSignIn.userEmail.placeholder}
-          value={userEmail}
-          onChange={handleChangeUserEmail}
-          id="userEmail" />
+          value={userName}
+          onChange={handleChangeUserName}
+          id="userName" />
       </div>
       <div className="mb-3">
         <FormField
@@ -71,8 +72,8 @@ export function FormSignIn() {
       </div> */}
       <Button
         type="submit"
-        text="Submit"/>
-        {/* text={texts[lang].formSignIn.button}/> */}
+        text="Submit" />
+      {/* text={texts[lang].formSignIn.button}/> */}
     </form>
   )
 }

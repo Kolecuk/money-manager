@@ -2,6 +2,9 @@ export const baseURL = 'https://aquamarine-chough-477967.hostingersite.com/wp-js
 
 export const signInEndpoint = '/auth/login'
 export const signUpEndpoint = '/auth/register'
+export const forgotPasswordEndpoint = '/auth/forgot-password'
+export const resetPasswordEndpoint = '/auth/reset-password'
+export const testEmailEndpoint = '/auth/test-email'
 export const categoriesEndpoint = '/categories'
 export const categoryEndpoint = (categoryId) => `/categories/${categoryId}`
 export const subcategoriesEndpoint = '/subcategories'
