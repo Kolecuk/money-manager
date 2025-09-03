@@ -8,6 +8,8 @@ import {
 const initialState = {
   isLoading: false,
   error: null,
+  limits: [],
+  hasLimit: false,
   limit: {},
   spending: {},
   status: null,
@@ -61,7 +63,7 @@ export const limitsSlice = createSlice({
         state.isLoading = true
       })
       .addCase(fetchLimits.fulfilled, (state, action) => {
-        state.limit = action.payload
+        state.limits = action.payload
         state.isLoading = false
       })
       .addCase(fetchLimits.rejected, (state, action) => {
@@ -82,8 +84,10 @@ export const limitsSlice = createSlice({
       .addCase(fetchCheckLimits.pending, (state) => {
         state.error = null
         state.isLoading = true
+        state.hasLimit = false
       })
       .addCase(fetchCheckLimits.fulfilled, (state, action) => {
+        state.hasLimit = action.payload.hasLimit
         state.limit = action.payload.limit
         state.spending = action.payload.spending
         state.status = action.payload.status

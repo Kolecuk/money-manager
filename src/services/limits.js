@@ -1,4 +1,4 @@
-import { post, get } from '../utils/client'
+import { get, post } from '../utils/client'
 import {
   limitsEndpoint,
   checkLimitsEndpoint
