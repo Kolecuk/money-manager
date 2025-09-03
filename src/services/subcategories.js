@@ -1,12 +1,12 @@
 import { get, post, put, del } from '../utils/client'
 import {
-  categoriesEndpoint,
-  categoryEndpoint
+  subcategoriesEndpoint,
+  subcategoryEndpoint
 } from '../config/api'
 
-export const requestCategories = async (body) => {
+export const requestSubcategories = async (body) => {
   try {
-    const response = await get(categoriesEndpoint, body)
+    const response = await get(subcategoriesEndpoint, body)
     return response.data
   } catch (error) {
     return {
@@ -16,9 +16,9 @@ export const requestCategories = async (body) => {
   }
 }
 
-export const requestAddCategory = async (body) => {
+export const requestAddSubcategory = async (body) => {
   try {
-    const response = await post(categoriesEndpoint, body)
+    const response = await post(subcategoriesEndpoint, body)
     return response.data
   } catch (error) {
     return {
@@ -28,9 +28,9 @@ export const requestAddCategory = async (body) => {
   }
 }
 
-export const requestChangeCategory = async (body) => {
+export const requestChangeSubcategory = async (body) => {
   try {
-    const response = await put(categoryEndpoint, body)
+    const response = await put(subcategoryEndpoint, body)
     return response.data
   } catch (error) {
     return {
@@ -40,9 +40,9 @@ export const requestChangeCategory = async (body) => {
   }
 }
 
-export const requestDeleteCategory = async (body) => {
+export const requestDeleteSubcategory = async (body) => {
   try {
-    const response = await del(categoryEndpoint, body)
+    const response = await del(subcategoryEndpoint, body)
     return response.data
   } catch (error) {
     return {

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import {
   requestCategories,
-  requestAddCategories,
+  requestAddCategory,
   requestChangeCategory,
   requestDeleteCategory
 } from '../services/categories'
@@ -25,10 +25,10 @@ export const fetchCategories = createAsyncThunk(
     return data
   })
 
-export const fetchAddCategories = createAsyncThunk(
-  'categories/fetchAddCategories',
+export const fetchAddCategory = createAsyncThunk(
+  'categories/fetchAddCategory',
   async (body, { rejectWithValue }) => {
-    const data = await requestAddCategories(body)
+    const data = await requestAddCategory(body)
 
     if (data.hasError) {
       return rejectWithValue(data)
@@ -79,14 +79,14 @@ export const categoriesSlice = createSlice({
         state.error = action.payload.response.data.message
         state.isLoading = false
       })
-      .addCase(fetchAddCategories.pending, (state) => {
+      .addCase(fetchAddCategory.pending, (state) => {
         state.error = null
         state.isLoading = true
       })
-      .addCase(fetchAddCategories.fulfilled, (state, action) => {
+      .addCase(fetchAddCategory.fulfilled, (state, action) => {
         state.isLoading = false
       })
-      .addCase(fetchAddCategories.rejected, (state, action) => {
+      .addCase(fetchAddCategory.rejected, (state, action) => {
         state.error = action.payload.response.data.message
         state.isLoading = false
       })
