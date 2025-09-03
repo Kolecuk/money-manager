@@ -4,6 +4,7 @@ import { profileReducer } from './profile-slice'
 import { limitsReducer } from './limits-slice'
 import { categoriesReducer } from './categories-slice'
 import { subcategoriesReducer } from './subcategories-slice'
+import { transactionsReducer } from './transactions-slice'
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     profile: profileReducer,
     limits: limitsReducer,
     categories: categoriesReducer,
-    subcategories: subcategoriesReducer
+    subcategories: subcategoriesReducer,
+    transactions: transactionsReducer
   },
 })
