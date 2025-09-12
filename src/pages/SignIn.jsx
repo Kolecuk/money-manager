@@ -1,9 +1,9 @@
 import { FormSignIn } from '../components/FormSignIn'
 
-export function Login() {
+export function SignIn() {
   return (
     <>
-      <h1>Login page</h1>
+      <h1>SignIn page</h1>
       <div className="w-25">
         <FormSignIn />
       </div>

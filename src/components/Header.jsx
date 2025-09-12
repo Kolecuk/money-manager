@@ -1,7 +1,11 @@
+import { Wrapper } from './Wrapper'
+
 export function Header() {
   return (
     <header>
-      Header
+      <Wrapper>
+        Header
+      </Wrapper>
     </header>
   )
 }
