@@ -1,5 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 
+@import './normalize';
+@import './fonts.scss';
+
 @import './layout.scss';
 @import './wrapper.scss';
 @import './header.scss';
