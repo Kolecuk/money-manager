@@ -2,14 +2,13 @@ import { createBrowserRouter } from 'react-router'
 import { Layout } from './components/Layout'
 import { AuthContainer } from './components/AuthContainer'
 import { UserContainer } from './components/UserContainer'
-import { Home } from './pages/Home'
+import { Greeting } from './pages/Greeting'
 import { SignIn } from './pages/SignIn'
 import { SignUp } from './pages/SignUp'
-import { ForgotPassword } from './pages/ForgotPassword'
+import { PasswordRecovery } from './pages/PasswordRecovery'
 import { ResetPassword } from './pages/ResetPassword'
-import { Dashboard } from './pages/Dashboard'
-import { Add } from './pages/Add'
-import { List } from './pages/List'
+import { Home } from './pages/Home'
+import { Operations } from './pages/Operations'
 import { Stats } from './pages/Stats'
 import { Settings } from './pages/Settings'
 
@@ -22,7 +21,7 @@ export const router = createBrowserRouter([
         children: [
           {
             path: '/',
-            element: <Home />
+            element: <Greeting />
           },
           {
             path: '/signin',
@@ -33,8 +32,8 @@ export const router = createBrowserRouter([
             element: <SignUp />
           },
           {
-            path: '/forgotpassword',
-            element: <ForgotPassword />
+            path: '/passwordrecovery',
+            element: <PasswordRecovery />
           },
           {
             path: '/resetpassword',
@@ -46,16 +45,12 @@ export const router = createBrowserRouter([
         element: <UserContainer />,
         children: [
           {
-            path: '/dashboard',
-            element: <Dashboard />
+            path: '/home',
+            element: <Home />
           },
           {
-            path: '/add',
-            element: <Add />
-          },
-          {
-            path: '/list',
-            element: <List />
+            path: '/operations',
+            element: <Operations />
           },
           {
             path: '/stats',

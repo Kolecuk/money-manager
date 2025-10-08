@@ -1,9 +1,9 @@
 import { FormSignIn } from '../components/FormSignIn'
 
-export function ForgotPassword() {
+export function PasswordRecovery() {
   return (
     <>
-      <h1>ForgotPassword page</h1>
+      <h1>PasswordRecovery page</h1>
       <div className="w-25">
         <FormSignIn />
       </div>
